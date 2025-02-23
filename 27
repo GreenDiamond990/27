@@ -1,0 +1,50 @@
+using UnityEngine;
+
+namespace Assignment27
+{
+    public class Assignment27 : MonoBehaviour
+    {
+        void Start()
+        {
+           
+            int a = 5;
+            int b = 10;
+            int c; 
+
+           
+            Debug.Log("Before CallByValue: a = " + a);
+            CallByValue(a);
+            Debug.Log("After CallByValue: a = " + a); 
+
+           
+            Debug.Log("Before CallByReference: b = " + b);
+            CallByReference(ref b);
+            Debug.Log("After CallByReference: b = " + b); 
+
+            
+            AssignValueUsingOut(out c);
+            Debug.Log("After AssignValueUsingOut: c = " + c); 
+        }
+
+        
+        void CallByValue(int num)
+        {
+            num += 10;
+            Debug.Log("Inside CallByValue: num = " + num);
+        }
+
+        
+        void CallByReference(ref int num)
+        {
+            num += 10;
+            Debug.Log("Inside CallByReference: num = " + num);
+        }
+
+        
+        void AssignValueUsingOut(out int num)
+        {
+            num = 100; // Must assign a value when using 'out'
+            Debug.Log("Inside AssignValueUsingOut: num = " + num);
+        }
+    }
+}
